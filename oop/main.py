@@ -5,5 +5,6 @@ class Hero:
         self.power = power
         self.defense = defense
         
-hero1 = Hero()
+hero1 = Hero("juang", 100, 15, 10)
 
+print(hero1.__dict__)

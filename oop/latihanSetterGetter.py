@@ -19,7 +19,7 @@ class Hero:
 
 	@property
 	def info(self):
-		return "{}: \n\thealth = {}/{} \n\tattack: {}\n\tarmor: {}".format(self.__name, self.__health, self.__healthMax, self.__attPower, self.__armor)
+		return "{} level {}: \n\thealth = {}/{} \n\tattack: {}\n\tarmor: {}".format(self.__name, self.__level,self.__health, self.__healthMax, self.__attPower, self.__armor)
 
 	@property
 	def gainExp(self):
@@ -28,7 +28,7 @@ class Hero:
 	@gainExp.setter
 	def gainExp(self, addExp):
 		self.__exp += addExp
-		if (self.__exp >= 100:
+		if (self.__exp >= 100):
 			print(self.__name, ' level up')
 			self.__level += 1
 			self.__exp -= 100
@@ -36,6 +36,8 @@ class Hero:
 			self.__attPower = self.__attackPowerStandard * self.__level
 			self.__armor = self.__armorStandard * self.__level
 
+	def attack(self, musuh):
+		self.gainExp = 50
 
 
 # name = str(input("masukkan nama hero: "))
@@ -44,4 +46,10 @@ class Hero:
 # armor = int(input("masukkan nilai bertahan: "))
 
 slardar = Hero("slardar", 100, 5, 10)
+kimimaru = Hero("kimimaru", 100, 5, 10)
 print(slardar.info)		
+
+slardar.attack(kimimaru)
+slardar.attack(kimimaru)
+slardar.attack(kimimaru)
+print(slardar.info)
